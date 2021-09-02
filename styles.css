@@ -1,0 +1,255 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#navbar{
+    background-color: #FFB319;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 0 30px ;
+}
+
+#searchText{
+    width: 600px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#navbar form button {
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: all 0.25s;
+}
+#navbar form button:hover{
+    color: whitesmoke;
+    background-color: black;
+    font-weight: bold;
+    transform: translateY(-0.20rem);
+    box-shadow: 2px 2px 2px 1px magenta;
+    cursor: pointer;
+}
+#imageContainer{
+    text-align: center;
+}
+.menu{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height:600px;
+    background-image: url('blackbackkground.jpg');
+}
+.menuItem{
+    color: mintcream;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px;
+    background-color: #22577A;
+    border-radius: 15px;
+    border: 5px solid #FFB319;
+    transition: all 0.25s;
+}
+.menuItem:hover{
+    color:#99154E;
+  font-weight: 1000;
+  border-radius: 10px;
+  border-left:6px inset #99154E;
+  border-top: 4px inset #99154E;
+  background-color: #EBA83A;
+  transform:translateY(-0.15em);
+  box-shadow: 0 0.5em 0.5em -0.4em #99154E;
+}
+
+.square{
+    width: 300px;
+    height: 300px;
+    margin: 5px 10px;
+}
+
+#imageContainer{
+    /* padding: 40px 0; */
+    background-image: url('showbackground.jpg');
+}
+.imageDiv{
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px 5px;
+    margin-top: 20px;
+    background-color: #FFF7AE;
+    transition: all 0.25s;
+}
+.imageDiv:hover{
+    width: 400px;
+    height: 550px;
+    cursor: pointer;
+    margin: 10px 5px;
+    border-radius: 40px;
+    transform:translateZ(0.15em);
+    box-shadow: 0 1em 1em -0.4em #FFE459;
+}
+.scheduleHeading{
+    text-align: center;
+    padding: 10px;
+}
+.scheduleDescription{
+    text-align: start;
+    padding: 20px 40px;
+}
+#scheduleForm{
+    font-size: 20px;
+    padding: 20px 40px;
+}
+
+#scheduleForm fieldset{
+    background-color: burlywood;
+}
+#scheduleContainer{
+    padding: 20px;
+    text-align: center;
+}
+
+.scheduleDiv{
+    background-color: bisque;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 5px dotted #2A0944;
+    border-radius: 40px;
+    padding: 10px;
+    color: #FF449F;
+    box-shadow: 10px 5px 5px maroon;
+    background-image: url('showbackground.jpg');
+}
+.scheduleImage{
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+}
+.summary{
+    padding: 10px 100px;
+    text-align: center;
+}
+button{
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: all 0.25s;
+}
+button:hover{
+    color: whitesmoke;
+    background-color: black;
+    font-weight: bold;
+    transform: translateY(-0.20rem);
+    box-shadow: 2px 2px 2px 1px magenta;
+    cursor: pointer;
+}
+#showIndexContainer{
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.showIndexButtons{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.showDiv{
+    display: inline-block;
+    background-color: #FCDEC0;
+    margin: 5px;
+    padding: 5px;
+    color: #FF449F;
+    background-image: url('showbackground.jpg');
+}
+.showDiv:hover{
+    cursor: pointer;
+}
+.showDivImage{
+    width: 200px;
+    height: 200px;
+}
+.showDivTitle{
+    font-size: 15px;
+    font-weight: bolder;
+}
+hr {
+    border: none;
+    border-top: 3px double #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+hr:after {
+    background: #fff;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+.individualShowDiv{
+    padding:20px 60px 40px;
+    background-color: #FCDEC0;
+    border-radius: 40px;
+    margin: 20px;
+    border: 7px dotted #2A0944;
+    background-image: url('blackbackkground.jpg');
+    color: #FFF338;
+}
+.indiviualShowDivImage{
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    transition: all 0.25s;
+}
+ .indiviualShowDivImage:hover{
+     width: 300px;
+     height: 300px;
+     border-radius: 30px;
+     box-shadow: 10px 5px 5px maroon;
+     transform:translateZ(0.25rem);
+ }
+
+ .castDiv{
+    display: inline-block;
+    width: 600px;
+    height: 500px;
+    color: #FF449F;
+    text-align: center;
+    border-radius: 30px;
+    margin: 5px 10px;
+    margin-top: 20px;
+    background-color: #FFF7AE;
+    box-shadow: 10px 5px 5px maroon;
+    background-image: url('showbackground.jpg');
+ }
+ .castImage{
+     margin: 10px;
+     transition: all 0.5s;
+ }
+ .castImage:hover{
+     width: 280px;
+     height: 280px;
+     border-radius: 40px; 
+     margin:0;
+     border-top:7px dotted #FFE459;
+     border-left:5px dotted #FFE459;
+ }
+
+ #playgroundForm{
+     padding: 30px;
+     color: #FF449F;
+     text-align: center;
+     margin-top: 70px;
+     background-image: url('showbackground.jpg');
+ }

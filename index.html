@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <title>IMDb: Ratings & Reviews</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <h1>IMDb</h1>
+        <form>
+            <input type="text" id="searchText" placeholder="Search IMDb" autocomplete="off">
+            <button>Search</button>
+        </form>
+    </nav>
+
+    <div class="menu" style="text-align: center;">
+        <a href="showIndex.html" target="_blank" class="menuItem">All Shows</a>
+        <a href="schedule.html" target="_blank" class="menuItem">Show Schedule</a>
+        <a href="playground.html" target="_blank" class="menuItem">IMDb Playground</a>
+    </div>
+    <h1 id="resultHeading" style="text-align: center;"></h1>
+    <div id="imageContainer">
+        
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
