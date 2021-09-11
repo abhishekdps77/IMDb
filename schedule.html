@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imdbFavicon.ico">
     <title>Schedule</title>
 </head>
 
 <body>
-    <h1 class="scheduleHeading">Schedule</h1>
+    <h1 class="scheduleHeading">Schedule >>></h1>
     <p class="scheduleDescription">
         The schedule is a complete list of episodes that air in a given country on a given date. Episodes are returned
         in the order in which they are aired, and full information about the episode and the corresponding show is
@@ -21,7 +28,7 @@
     </p>
     <form action="" id="scheduleForm">
         <fieldset>
-            <legend>Get Schedule</legend>
+            <legend style="color: white;">Get Schedule</legend>
             <p>
                 <label for="countryCode">Country:</label>
                 <select name="country" id="countryCode">
@@ -43,7 +50,20 @@
     <div id="scheduleContainer">
 
     </div>
-
+    <footer>
+        <div class="social-media-container">
+            <a href="https://www.instagram.com/imdb/" target="_blank"><i
+                    class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.facebook.com/imdb" target="_blank"><i
+                    class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://www.twitch.tv/IMDb" target="_blank"><i class="fab fa-twitch fa-2x"></i></a>
+            <a href="https://twitter.com/imdb" target="_blank"> <i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://www.youtube.com/imdb" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+        <div id="copyright">
+            <p class="copyright-text">Made with &heartsuit; and &#127866; <br> &copy; <b>Abhishek Singh</b></p>
+        </div>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="schedule.js"></script>
 </body>

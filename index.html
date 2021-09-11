@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="imdbFavicon.ico">
     <link rel="stylesheet" href="styles.css">
     <title>IMDb: Ratings & Reviews</title>
 </head>
@@ -20,17 +26,42 @@
         </form>
     </nav>
 
-    <div class="menu" style="text-align: center;">
-        <a href="showIndex.html" target="_blank" class="menuItem">All Shows</a>
-        <a href="schedule.html" target="_blank" class="menuItem">Show Schedule</a>
-        <a href="playground.html" target="_blank" class="menuItem">IMDb Playground</a>
+    <div class="menuContainer">
+        <h1>Welcome to IMDb !!!</h1>
+        <div class="menu">
+            <a href="showIndex.html" target="_blank" class="menuItem">All Shows</a>
+            <a href="schedule.html" target="_blank" class="menuItem">Show Schedule</a>
+            <a href="newsmakers.html" target="_blank" class="menuItem">Entertainment News</a>
+            <a href="playground.html" target="_blank" class="menuItem">IMDb Playground</a>
+        </div>
     </div>
-    <h1 id="resultHeading" style="text-align: center;"></h1>
+    <div id="topIndianSeries">
+        <h1>Fan Favourites ></h1>
+        <iframe src="https://www.youtube.com/embed/XatRGut65VI" frameborder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/BUIcp8dRvcI" frameborder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/w-Xe8gLBc5I" frameborder="0"></iframe>
+        <iframe src="https://www.youtube.com/embed/GF0H5DZAE2g" frameborder="0"></iframe>
+    </div>
+    <div id="resultHeadingDiv" style="background-image: url('showbackground.jpg');">
+        <h1 id="resultHeading"></h1>
+    </div>
     <div id="imageContainer">
-        
     </div>
 
-
+    <footer>
+        <div class="social-media-container">
+            <a href="https://www.instagram.com/imdb/" target="_blank"><i
+                    class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.facebook.com/imdb" target="_blank"><i
+                    class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://www.twitch.tv/IMDb" target="_blank"><i class="fab fa-twitch fa-2x"></i></a>
+            <a href="https://twitter.com/imdb" target="_blank"> <i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://www.youtube.com/imdb" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+        <div id="copyright">
+            <p class="copyright-text">Made with &heartsuit; and &#127866; <br> &copy; <b>Abhishek Singh</b></p>
+        </div>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
 </body>

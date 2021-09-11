@@ -7,96 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imdbFavicon.ico">
     <title>Details</title>
 </head>
 
 <body>
-    <h2 id="showNameHeading" style="text-align:center;"></h2>
+    <h2 id="showNameHeading"></h2>
     <div id="showContainer" style="text-align: center;">
 
     </div>
+    <footer>
+        <div class="social-media-container">
+            <a href="https://www.instagram.com/imdb/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.facebook.com/imdb" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="https://www.twitch.tv/IMDb" target="_blank"><i class="fab fa-twitch fa-2x"></i></a>
+            <a href="https://twitter.com/imdb" target="_blank"> <i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://www.youtube.com/imdb" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+        <div id="copyright">
+            <p class="copyright-text">Made with &heartsuit; and &#127866; <br> &copy; <b>Abhishek Singh</b></p>
+        </div>
+    </footer>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        window.onload = function () {
-            var url = document.location.href,
-                params = url.split('?')[1].split('&'),
-                data = {}, tmp;
-
-            for (var i = 0, l = params.length; i < l; i++) {
-                tmp = params[i].split('=');
-                data[tmp[0]] = tmp[1];
-            }
-            getDetails(data.id);
-        }
-
-        const getDetails = async (id) => {
-            if(id === 'null'){
-                const showContainer = document.getElementById('showContainer');
-                const errorImage = document.createElement('img');
-                showContainer.appendChild(errorImage);
-                errorImage.src='error.jpg';
-                errorImage.style.width='100%';
-                errorImage.style.height='100%';
-            }
-            const config = {
-                params: { thetvdb: id }
-            }
-
-            const res = await axios.get('https://api.tvmaze.com/lookup/shows', config);
-            let show = {
-                name: res.data.name,
-                type: res.data.type,
-                language: res.data.language,
-                genres: res.data.genres[0],
-                image: res.data.image.medium,
-                premiered: res.data.premiered,
-                officialSite: res.data.officialSite,
-                status: res.data.status,
-                summary: res.data.summary
-            };
-            console.log(show);
-
-            const showDiv = document.createElement('div');
-            const newImage = document.createElement('img');
-            const newName = document.createElement('h1');
-            const newType = document.createElement('p');
-            const newGenres = document.createElement('p');
-            const newPremired = document.createElement('p');
-            const newLanguage = document.createElement('p');
-            const newStatus = document.createElement('p');
-            const newSummary = document.createElement('p');
-            const detailLink = document.createElement('a');
-
-            const showContainer = document.getElementById('showContainer');
-            showContainer.appendChild(showDiv);
-            showDiv.appendChild(newImage);
-            showDiv.appendChild(newName);
-            showDiv.appendChild(newType);
-            showDiv.appendChild(newGenres);
-            showDiv.appendChild(newPremired);
-            showDiv.appendChild(newLanguage);
-            showDiv.appendChild(newStatus);
-            showDiv.appendChild(newSummary);
-            showDiv.appendChild(detailLink);
-
-            showDiv.setAttribute('class', 'individualShowDiv');
-            newImage.src = show.image;
-            newImage.classList.add('indiviualShowDivImage');
-            newName.innerHTML = show.name;
-            newType.innerHTML = `<b>Type:</b> ${show.type}`;
-            newGenres.innerHTML = `<b>Genere:</b> ${show.genres}`;
-            newPremired.innerHTML = `<b>Premeried:</b> ${show.premiered}`;
-            newLanguage.innerHTML = `<b>Language:</b> ${show.language}`;
-            newStatus.innerHTML = `<b>Status:</b> ${show.status}`;
-            newSummary.innerHTML = `<b>Summary:</b> ${show.summary}`;
-            detailLink.innerHTML = 'Read more ....'
-            detailLink.href = show.officialSite;
-            detailLink.target = '_blank';
-
-            document.getElementById('showNameHeading').innerHTML = `Showing result for ${show.name} !!!`;
-        }
-    </script>
+    <script src="details.js"></script>
 </body>
 
 </html>

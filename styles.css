@@ -2,20 +2,33 @@ body{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-image: url('footer.jpg');
+}
+h1{
+    font-family: 'Rampart One', cursive;
+}
+h2{
+    font-family: 'Rampart One', cursive;
 }
 
 #navbar{
-    background-color: #FFB319;
+    background-color: #FFB740;
     display: flex;
     justify-content:space-around;
     align-items: center;
     padding: 0 30px ;
 }
-
+#navbar h1{
+    background-color: black;
+    color: #EBA83A;
+    padding:5px 7px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px 1px maroon;
+}
 #searchText{
     width: 600px;
     height: 25px;
-    border: 2px solid black;
+    border: 3px solid maroon;
     border-radius: 10px;
 }
 
@@ -35,14 +48,48 @@ body{
 }
 #imageContainer{
     text-align: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    background-image: url('showbackground.jpg');
+}
+.menuContainer{
+    background-image: url('blackbackkground.jpg');
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+.menuContainer h1{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Rampart One', cursive;
+    font-size: 80px;
+    position: relative;
+    animation-name: abhishek;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-timing-function: ease-out;
+}
+
+@keyframes abhishek {
+   from{
+       top: -400px;
+   }
+   to{
+    top: 10px;
+   }
+  
 }
 .menu{
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    height:600px;
-    background-image: url('blackbackkground.jpg');
+    height:200px;
+    padding-bottom: 300px;
 }
 .menuItem{
     color: mintcream;
@@ -52,7 +99,7 @@ body{
     background-color: #22577A;
     border-radius: 15px;
     border: 5px solid #FFB319;
-    transition: all 0.25s;
+    transition: all 0.5s;
 }
 .menuItem:hover{
     color:#99154E;
@@ -61,19 +108,40 @@ body{
   border-left:6px inset #99154E;
   border-top: 4px inset #99154E;
   background-color: #EBA83A;
-  transform:translateY(-0.15em);
+  transform:translateY(-0.1em);
   box-shadow: 0 0.5em 0.5em -0.4em #99154E;
 }
-
+#topIndianSeries{
+    padding: 20px;
+    padding-bottom: 30px;
+    background-image: url('showbackground.jpg');
+    text-align: center;
+}
+#topIndianSeries h1{
+    text-align: start;
+    margin-left:20px;
+    padding-left: 20px;
+    color: white;
+    border-left: 5px solid #EBA83A;
+}
+#topIndianSeries iframe{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
 .square{
     width: 300px;
     height: 300px;
     margin: 5px 10px;
 }
 
-#imageContainer{
-    /* padding: 40px 0; */
-    background-image: url('showbackground.jpg');
+#resultHeading{
+    text-align: start;
+    margin: 0;
+    margin-left:20px;
+    padding-left: 20px;
+    color: white;
+    border-left: 5px solid #EBA83A;
 }
 .imageDiv{
     display: inline-block;
@@ -83,12 +151,12 @@ body{
     border-radius: 20px;
     margin: 5px 5px;
     margin-top: 20px;
-    background-color: #FFF7AE;
+    background-color: #38A3A5;
     transition: all 0.25s;
 }
 .imageDiv:hover{
     width: 400px;
-    height: 550px;
+    height: 520px;
     cursor: pointer;
     margin: 10px 5px;
     border-radius: 40px;
@@ -96,20 +164,30 @@ body{
     box-shadow: 0 1em 1em -0.4em #FFE459;
 }
 .scheduleHeading{
+    color: white;
     text-align: center;
     padding: 10px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+#scheduleHeading{
+    color: white;
 }
 .scheduleDescription{
+    color: white;
     text-align: start;
     padding: 20px 40px;
 }
 #scheduleForm{
     font-size: 20px;
     padding: 20px 40px;
+    color: white;
 }
 
 #scheduleForm fieldset{
-    background-color: burlywood;
+    background-image: url('blackbackkground.jpg');
+    border: 5px solid wheat;
+    border-radius: 10px;
 }
 #scheduleContainer{
     padding: 20px;
@@ -121,12 +199,13 @@ body{
     text-align: center;
     margin-top: 5px;
     margin-bottom: 20px;
-    border: 5px dotted #2A0944;
+    border-top: 2px dotted wheat;
+    border-left: 2px dotted wheat;
     border-radius: 40px;
     padding: 10px;
     color: #FF449F;
     box-shadow: 10px 5px 5px maroon;
-    background-image: url('showbackground.jpg');
+    background-image: url('blackbackkground.jpg');
 }
 .scheduleImage{
     padding: 20px;
@@ -141,7 +220,7 @@ button{
     height: 25px;
     border: 2px solid black;
     border-radius: 10px;
-    transition: all 0.25s;
+    transition: all 0.5s;
 }
 button:hover{
     color: whitesmoke;
@@ -169,13 +248,12 @@ button:hover{
     color: #FF449F;
     background-image: url('showbackground.jpg');
 }
-.showDiv:hover{
-    cursor: pointer;
-}
+
 .showDivImage{
     width: 200px;
     height: 200px;
 }
+
 .showDivTitle{
     font-size: 15px;
     font-weight: bolder;
@@ -196,13 +274,16 @@ hr:after {
     position: relative;
     top: -13px;
 }
-
+span{
+    color: white;
+    margin: 0 5px;
+    font-weight: bolder;
+}
 .individualShowDiv{
     padding:20px 60px 40px;
     background-color: #FCDEC0;
     border-radius: 40px;
-    margin: 20px;
-    border: 7px dotted #2A0944;
+    margin-top: 20px;
     background-image: url('blackbackkground.jpg');
     color: #FFF338;
 }
@@ -229,9 +310,10 @@ hr:after {
     border-radius: 30px;
     margin: 5px 10px;
     margin-top: 20px;
+    padding:30px 0 ;
     background-color: #FFF7AE;
     box-shadow: 10px 5px 5px maroon;
-    background-image: url('showbackground.jpg');
+    background-image: url('blackbackkground.jpg');
  }
  .castImage{
      margin: 10px;
@@ -250,6 +332,53 @@ hr:after {
      padding: 30px;
      color: #FF449F;
      text-align: center;
+     margin: 0 30px;
      margin-top: 70px;
-     background-image: url('showbackground.jpg');
+     border-radius: 40px;
+     border :5px solid wheat;
+     background-image: url('blackbackkground.jpg');
  }
+
+ #topActorContainer{
+    padding: 20px;
+    text-align: center;
+ }
+
+ footer{
+     background-image: url('footer.jpg');
+     background-position: top;
+     color: white;
+     padding-bottom: 20px;
+ }
+ .social-media-container{
+     text-align: center;
+    padding:20px 30px 20px;
+  }
+  
+  .social-media-container i{
+    color: white;
+    padding: 10px; 
+    transition: all 0.5s;
+  }
+  .social-media-container i:hover{
+    background-color: #F8F8F8;
+    color: #23049D;
+    border-radius: 50%;
+    box-shadow: 0 0.5em 0.5em -0.4em #0CECDD;
+    transform:translateY(-0.25em)
+  }
+  #copyright{
+      text-align: center;
+  }
+#showNameHeading{
+    text-align:center; 
+    color: white; 
+    font-size: 40px;
+}
+
+#showIndexHeading{
+    color: white;
+}
+#castContainer{
+    padding: 30px 0 50px 0;
+}

@@ -3,10 +3,12 @@ const button = document.getElementsByTagName('button')[0]
 button.addEventListener('click',(event)=>{
     event.preventDefault();
     const searchText = document.getElementById('searchText').value;
-    clearScreen();
+    clearScreen(searchText);
     getMovies(searchText);
+    setTimeout(()=>{
+        window.location.href='#resultHeadingDiv';
+    },800);
 });
-
 
 const getMovies = async (searchText) => {
     const config = {
@@ -16,13 +18,14 @@ const getMovies = async (searchText) => {
     createImage(res.data,searchText);   
 }
 
-const clearScreen = ()=>{
+const clearScreen = (searchText)=>{
     const imageContainer = document.getElementById('imageContainer');
     if(imageContainer.children.length === 0){
         console.log('empty container');
     }
     else{
         imageContainer.innerHTML='';
+        document.getElementById('resultHeading').innerHTML='';
     }
 };
 
@@ -35,7 +38,10 @@ const createImage = (shows,searchText) => {
             errorImage.src='error.jpg';
             errorImage.style.width='100%';
             errorImage.style.height='100%';
+            let capitailSearchTextError = searchText.charAt(0).toUpperCase()+searchText.slice(1);
+            document.getElementById('resultHeading').innerHTML=`Oops no results found for ${capitailSearchTextError} > `;
     }
+    
     for(let result of shows){
         let imageUrl = result.show.image.medium;
         let name = result.show.name;
@@ -50,6 +56,8 @@ const createImage = (shows,searchText) => {
         const newRating = document.createElement('h4');
         const newLanguage = document.createElement('p');
         const detailLink = document.createElement('a');
+        const clickOnImage = document.createElement('p');
+
 
         const imageContainer = document.getElementById('imageContainer');
         imageContainer.appendChild(imageDiv);
@@ -58,6 +66,7 @@ const createImage = (shows,searchText) => {
         imageDiv.appendChild(newRating);
         imageDiv.appendChild(newLanguage);
         imageDiv.appendChild(detailLink);
+        imageDiv.appendChild(clickOnImage);
 
         imageDiv.setAttribute('class','imageDiv');
         newImage.src = imageUrl;
@@ -68,38 +77,27 @@ const createImage = (shows,searchText) => {
         detailLink.innerHTML = 'Read more ....'
         detailLink.href = url;
         detailLink.target='_blank'; 
+
         let capitailSearchText = searchText.charAt(0).toUpperCase()+searchText.slice(1);
-        document.getElementById('resultHeading').innerHTML = `Showing results for ${capitailSearchText} !!!`;
-
-
-        imageDiv.addEventListener('click' , ()=>{
+        document.getElementById('resultHeading').innerHTML = `Showing results for ${capitailSearchText} >`;
+        
+        imageDiv.addEventListener('mouseover' , ()=>{
+            console.log('mouseover');
+            clickOnImage.innerHTML='<b style="color:blue;">CLICK IMAGE FOR MORE DETAILS</b>';
+        });
+        imageDiv.addEventListener('mouseout' , ()=>{
+            console.log('mouseout');
+            clickOnImage.innerHTML='';
+        });
+        newImage.addEventListener('click' , ()=>{
              testJS(id);
         });
-
-        const getDetail = async (id)=>{
-            const config = {
-                params : { imdb : id }
-            }
-
-            const res = await axios.get('https://api.tvmaze.com/lookup/shows', config);  
-            console.log(res.data);
-             let show = {
-                name: res.data.name,
-                type: res.data.type,
-                language : res.data.language,
-                genres : res.data.genres[0],
-                image: res.data.image.medium,
-                premiered: res.data.premiered,
-                officialSite :res.data.officialSite
-            };
-            
-        };
     }
 };
 
 var testJS = (id)=>{
     console.log(id);
-    var url = 'file:///C:/Users/abhis/Desktop/IMDB/details.html?id=' + encodeURIComponent(id);
+    var url = './details.html?id=' + encodeURIComponent(id);
     window.open(url);
 };
 

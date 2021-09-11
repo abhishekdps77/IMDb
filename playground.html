@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imdbFavicon.ico">
     <title>IMDb Playground</title>
 </head>
 
 <body>
-    <h1 style="text-align: center;">Welcome to IMDb Playground </h1>
+    <h1 style="text-align: center; color: white; letter-spacing: 1.8px;">Welcome to IMDb Playground >>></h1>
     <form action="" id="playgroundForm">
         <p>
             <label for="id">Enter a random number between 1 to 4000 </label>
@@ -22,90 +26,12 @@
             <button>Find my Celebrity Face</button>
         </p>
     </form>
-    <h2 id="celibrityHeading" style="text-align: center;"></h2>
+    <h2 id="celibrityHeading" style="text-align: center; color: white;"></h2>
     <div id="celebrityContainer" style="text-align: center;">
 
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        const button = document.getElementsByTagName('button')[0]
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            const id = document.getElementById('id').value;
-            if(id>4000){
-               document.getElementById('celibrityHeading').innerHTML = 'Enter a valid number'; 
-            }
-            clearScreen();
-            getCelebrity(id);
-        });
-
-        const clearScreen = () => {
-            const celebrityContainer = document.getElementById('celebrityContainer');
-            const celibrityHeading = document.getElementById('celibrityHeading');
-            if (celebrityContainer.children.length === 0) {
-                console.log('empty container');
-            }
-            else {
-                celebrityContainer.innerHTML = '';
-                celibrityHeading.innerHTML = '';
-            }
-        };
-        const getCelebrity = async (id) => {
-            const res = await axios.get(`https://api.tvmaze.com/shows/${id}/cast`);
-            console.log(res.data);
-            createShowCast(res.data);
-        }
-
-        const createShowCast = (showCast) => {
-            if (showCast.length === 0) {
-                const celebrityContainer = document.getElementById('celebrityContainer');
-                const errorImage = document.createElement('img');
-                celebrityContainer.appendChild(errorImage);
-                errorImage.src = 'error.jpg';
-                errorImage.style.width = '100%';
-                errorImage.style.height = '100%';
-            }
-
-            let result = showCast[0];
-
-            let name = result.person.name;
-            let birthday = result.person.birthday;
-            let gender = result.person.gender;
-            let imageUrl = result.person.image.medium;
-            let charName = result.character.name;
-            let charImageUrl = result.character.image.medium;
-
-            const castDiv = document.createElement('div');
-            const newImage = document.createElement('img');
-            const newImageChar = document.createElement('img');
-            const newName = document.createElement('h1');
-            const newNameChar = document.createElement('p');
-            const newGender = document.createElement('p');
-            const newDOB = document.createElement('p');
-
-            const celebrityContainer = document.getElementById('celebrityContainer');
-            celebrityContainer.appendChild(castDiv);
-            castDiv.appendChild(newImage);
-            castDiv.appendChild(newImageChar);
-            castDiv.appendChild(newName);
-            castDiv.appendChild(newNameChar);
-            castDiv.appendChild(newDOB);
-            castDiv.appendChild(newGender);
-
-            castDiv.setAttribute('class', 'castDiv');
-            newImage.src = imageUrl;
-            newImage.setAttribute('class', 'castImage');
-            newImageChar.src = charImageUrl;
-            newImageChar.setAttribute('class', 'castImage');
-            newName.innerHTML = name;
-            newNameChar.innerHTML = `<b>Char Name:</b> ${charName}`;
-            newGender.innerHTML = `<b>Gender:</b> ${gender}`;
-            newDOB.innerHTML = `<b>DOB:</b> ${birthday}`;
-
-            document.getElementById('celibrityHeading').innerHTML =`Wooh Hoo !!! ${name} is your Celibrity Face....`;
-        }
-
-    </script>
+    <script src="playground.js"></script>
 </body>
 
 </html>

@@ -38,26 +38,33 @@ const createShows = (shows, number) => {
         const showDiv = document.createElement('div');
         const newImage = document.createElement('img');
         const newName = document.createElement('p');
-        const detailLink = document.createElement('a');
+        const castButton = document.createElement('button');
+        const crewButton = document.createElement('button');
+
+
 
         const showIndexContainer = document.getElementById('showIndexContainer');
         showIndexContainer.appendChild(showDiv);
         showDiv.appendChild(newImage);
         showDiv.appendChild(newName);
-        showDiv.appendChild(detailLink);
+        showDiv.appendChild(castButton);
+        showDiv.append(crewButton);
 
-        document.getElementById('showIndexHeading').innerHTML = `Page ${Number(number)} of 6 !!!`;
+        document.getElementById('showIndexHeading').innerHTML = `Page ${Number(number)} of 6 `;
         showDiv.setAttribute('class', 'showDiv');
         newName.setAttribute('class', 'showDivTitle');
         newImage.src = imageUrl;
         newImage.classList.add('showDivImage');
         newName.innerHTML = name;
-        detailLink.innerHTML = '>>>>>'
-        detailLink.href = url;
-        detailLink.target = '_blank';
+        castButton.innerHTML= 'CAST';
+        crewButton.innerHTML = 'CREW';
 
-        showDiv.addEventListener('click', () => {
-            testJS(id);
+        castButton.addEventListener('click', () => {
+            castInfo(id);
+        });
+
+        crewButton.addEventListener('click' , ()=>{
+            crewInfo(id);
         });
     }
 };
@@ -70,8 +77,12 @@ for (var i = 0; i < document.querySelectorAll('button').length; i++) {
     });
 }
 
-var testJS = (id) => {
-    console.log(id);
-    var url = 'file:///C:/Users/abhis/Desktop/IMDB/showcast.html?id=' + encodeURIComponent(id);
+var castInfo = (id) => {
+    var url = './showcast.html?id=' + encodeURIComponent(id);
+    window.open(url);
+};
+
+var crewInfo = (id)=>{
+    var url = './showCrew.html?id=' + encodeURIComponent(id);
     window.open(url);
 };
